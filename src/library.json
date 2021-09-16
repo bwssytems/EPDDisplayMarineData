@@ -1,0 +1,25 @@
+{
+    "name": "EPDDisplayMarineData",
+    "keywords": "environment,utility",
+    "description": "Display handling for E-Ink display, example for 4in 2 color",
+  "authors":
+  [
+      {
+          "name": "bwssytems",
+          "url": "https://github.com/bwssytems",
+          "maintainer": false
+      }
+  
+  ],
+  "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/bwssytems/EPDDisplayMarineData.git"
+    },
+    "frameworks": "arduino",
+    "platforms": 
+    [
+      "espressif32"
+    ],
+    "version": "0.0.1"
+  }
