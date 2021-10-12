@@ -728,11 +728,21 @@ parameter:
     Color_Foreground : Select the foreground color
     Color_Background : Select the background color
 ******************************************************************************/
-void Paint_DrawDepth(UWORD Xstart, UWORD Ystart, const char * pString,
+void Paint_DrawDepth(UWORD Xstart, UWORD Ystart, float new_depth,
                          sFONT* Font, UWORD Color_Foreground, UWORD Color_Background)
 {
-    UWORD Dx = Font->Width;
+    String _depth = String(new_depth);
 
+    if (_depth.length() < 6)
+    {
+      for (int i = 0; i <= 6 - _depth.length(); i++)
+      {
+        _depth = " " + _depth;
+      }
+    }
+
+    UWORD Dx = Font->Width;
+    const char *pString = _depth.c_str();
     //Write data into the cache
     Paint_DrawChar(Xstart         , Ystart, pString[0], Font, Color_Foreground, Color_Background);
     Paint_DrawChar(Xstart + Dx    , Ystart, pString[1], Font, Color_Foreground, Color_Background);
